@@ -3,9 +3,11 @@ import folium
 import requests as req
 import json
 import numpy as np
+from docplex.mp.model import Model
 
 
-loc_x = np.array([])
+loc_x = []
+loc_y = []
 
 url = "https://address-from-to-latitude-longitude.p.rapidapi.com/geolocationapi"
 
@@ -30,8 +32,9 @@ def geocode():
         address = request.form.get('address')
         querystring = {"address":address}
         response = req.request("GET", url, headers=headers, params=querystring)
-        np.append(loc_x, int(json.loads(response.text)["Results"][0]['longitude']))
-        print(loc_x)
+        loc_x.append(int(json.loads(response.text)["Results"][0]['longitude']))
+        loc_y.append(int(json.loads(response.text)["Results"][0]['latitude']))
+        print(loc_x, " ", loc_y)
         return render_template('index.html')
         
 
