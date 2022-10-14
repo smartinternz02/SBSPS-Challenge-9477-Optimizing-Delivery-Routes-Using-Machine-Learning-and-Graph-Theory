@@ -1,6 +1,20 @@
-
 from flask import Flask, render_template, request
 import folium
+import requests as req
+import json
+import numpy as np
+
+
+loc_x = np.array([])
+
+url = "https://address-from-to-latitude-longitude.p.rapidapi.com/geolocationapi"
+
+querystring = {"address":"215, sukrawarpet street, coimbatore, 641001"}
+
+headers = {
+	"X-RapidAPI-Key": "954bd9e800mshf505c10f126c98dp193b7cjsnf78c048d56c5",
+	"X-RapidAPI-Host": "address-from-to-latitude-longitude.p.rapidapi.com"
+}
 
 app = Flask(__name__)
 
@@ -10,11 +24,15 @@ def index():
 
 
 
-@app.route('/geocode')
+@app.route('/geocode', methods=['POST', 'GET'])
 def geocode():
-    if request.method == 'GET':
+    if request.method == 'POST':
         address = request.form.get('address')
-        return "address: "+ address
+        querystring = {"address":address}
+        response = req.request("GET", url, headers=headers, params=querystring)
+        np.append(loc_x, int(json.loads(response.text)["Results"][0]['longitude']))
+        print(loc_x)
+        return render_template('index.html')
         
 
 @app.route('/map')
