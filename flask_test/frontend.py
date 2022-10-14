@@ -1,18 +1,28 @@
-from flask import Flask
 
+from flask import Flask, render_template, request
 import folium
 
-frontend = Flask(__name__)
+app = Flask(__name__)
 
-
-@frontend.route('/')
+@app.route('/')
 def index():
-    # start_coords = [46.9540700, 142.7360300]
-    # folium_map = folium.Map(location=start_coords, zoom_start=14)
-    # folium.PolyLine(locations=[[10.89167, 76.99085], [11.02682, 76.93035]]).add_to(folium_map)
-    # # folium.Marker([46.9540700, 142.7360300], popup='Yakutsk', icon=folium.Icon(color='red', icon='home')).add_to(folium_map)
-    return "HEllo OWorld <h1>HEllo OWorld</h1>"
+    return render_template('index.html') 
+
+
+
+@app.route('/geocode')
+def geocode():
+    if request.method == 'GET':
+        address = request.form.get('address')
+        return "address: "+ address
+        
+
+@app.route('/map')
+def flask_map():
+    start_coords = (46.9540700, 142.7360300)
+    folium_map = folium.Map(location=start_coords, zoom_start=14)
+    return folium_map._repr_html_()
 
 
 if __name__ == '__main__':
-    frontend.run(debug=True)
+    app.run(debug=True) 
