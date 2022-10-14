@@ -32,8 +32,8 @@ def geocode():
         address = request.form.get('address')
         querystring = {"address":address}
         response = req.request("GET", url, headers=headers, params=querystring)
-        loc_x.append(int(json.loads(response.text)["Results"][0]['longitude']))
-        loc_y.append(int(json.loads(response.text)["Results"][0]['latitude']))
+        loc_x.append(float(json.loads(response.text)["Results"][0]['longitude']))
+        loc_y.append(float(json.loads(response.text)["Results"][0]['latitude']))
         print(loc_x, " ", loc_y)
         return render_template('index.html')
         
