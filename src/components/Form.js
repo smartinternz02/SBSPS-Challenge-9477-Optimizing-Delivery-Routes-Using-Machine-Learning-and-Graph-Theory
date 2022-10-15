@@ -5,6 +5,7 @@ import { MapContainer, TileLayer, Marker, Popup, useMap, } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css';
 import '../App.css'
 import AddMarkers from '../components/addMarkers';
+import Routing from '../components/Routing';
 
 let markerArray = [];
 
@@ -34,6 +35,21 @@ function Form() {
 
     };
 
+
+    // const fetchRoute = () => {
+    //     const [visible,setVisible]=useState(false);
+
+    //     const handleModalOpen = () =>{
+    //         setVisible(true)
+    //       }
+
+    //     axios.get('/route')
+    //         .then((res) => {
+    //             console.log(res.data)
+    //         })
+    //         .catch((err) => { console.log(err) })
+    // }
+
     // console.log(markerArray)
 
     return (
@@ -49,6 +65,8 @@ function Form() {
                 <button type="submit">Submit</button>
                 {/* <h1>{Address}</h1> */}
             </form>
+            <button type="submit">Display Route</button>
+            <Routing />
         </ >
     )
 }

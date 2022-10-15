@@ -29,6 +29,7 @@ function AddMarkers() {
                 setMarkers((prevValue) => [...prevValue, new LatLng(res.data['latitude'][i], res.data['longitude'][i])]);
             }
                 // console.log(res.data)
+
             })
             .catch((err) => { console.log(err) })
     console.log(markers)

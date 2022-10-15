@@ -1,27 +1,21 @@
-import L from "leaflet";
-import { createControlComponent } from "@react-leaflet/core";
-import "leaflet-routing-machine";
+import { useEffect, useState } from "react";
 
-const createRoutineMachineLayer = (props) => {
-  const instance = L.Routing.control({
-    waypoints: [
-      L.latLng(33.52001088075479, 36.26829385757446),
-      L.latLng(33.50546582848033, 36.29547681726967)
-    ],
-    lineOptions: {
-      styles: [{ color: "#6FA1EC", weight: 4 }]
-    },
-    show: false,
-    addWaypoints: false,
-    routeWhileDragging: true,
-    draggableWaypoints: true,
-    fitSelectedRoutes: true,
-    showAlternatives: false
-  });
+function Routing() {
+    
+  const [html, setHTML] = useState({__html: ""});
 
-  return instance;
-};
+  useEffect(() => {
+    async function createMarkup() {
+      let response = await fetch(`http://localhost:5000/route`);
+       const backendHtmlString = await response.text()
+       console.log(backendHtmlString)
+        return {__html: backendHtmlString};
+     }
+     createMarkup().then(result => setHTML(result));
+  }, []);
+  
 
-const RoutingMachine = createControlComponent(createRoutineMachineLayer);
+  return <div dangerouslySetInnerHTML={html} />;
+}
 
-export default RoutingMachine;
+export default Routing;
