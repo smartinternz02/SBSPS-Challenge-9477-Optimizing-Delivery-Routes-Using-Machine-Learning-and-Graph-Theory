@@ -36,7 +36,7 @@ function AddMarkers() {
             })
             .catch((err) => { console.log(err) })
     console.log(markers)
-  }, [markers])
+  }, [])
 
   return (
     <>
