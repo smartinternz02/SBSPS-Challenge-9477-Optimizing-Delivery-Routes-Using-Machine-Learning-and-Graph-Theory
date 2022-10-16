@@ -4,6 +4,8 @@ import "leaflet-routing-machine/dist/leaflet-routing-machine.css";
 import "leaflet-routing-machine";
 import { Marker } from "react-leaflet";
 import axios from 'axios';
+import '../App.css'
+import 'leaflet/dist/leaflet.css';
 
 L.Marker.prototype.options.icon = L.icon({
   iconUrl: "https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png"
@@ -13,6 +15,7 @@ L.Marker.prototype.options.icon = L.icon({
 function AddMarkers() {
   // const initialMarkers = [new LatLng(51.505, -0.09)];
   const [markers, setMarkers] = useState([]);
+
 
   // const map = useMapEvents({
   //   click(e) {
@@ -33,7 +36,7 @@ function AddMarkers() {
             })
             .catch((err) => { console.log(err) })
     console.log(markers)
-  }, [])
+  }, [markers])
 
   return (
     <>
