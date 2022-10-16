@@ -2,6 +2,7 @@ from flask import Flask, render_template, request
 import folium
 import requests as req
 import json
+import cplex
 from flask_cors import CORS
 import numpy as np
 from docplex.mp.model import Model
