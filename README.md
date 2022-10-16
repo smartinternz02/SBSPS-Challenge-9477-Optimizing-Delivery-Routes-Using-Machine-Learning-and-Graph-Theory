@@ -1,6 +1,6 @@
 # Chariot
 
-Route optimizing ML Model
+## Route optimizing ML Model
 
 [![Everything Is AWESOME](https://yt-embed.herokuapp.com/embed?v=YnAtqDUC0GY)](https://www.youtube.com/watch?v=YnAtqDUC0GY "Everything Is AWESOME")
 
