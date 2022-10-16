@@ -19,7 +19,7 @@ function Form() {
     function refreshPage() {
         setTimeout(() => {
             window.location.reload(false);
-        }, 500);
+        }, 800);
     }
 
     const navigate = useNavigate();
