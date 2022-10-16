@@ -10,7 +10,7 @@ Basically it is an web app for finding the optimized route from the given locati
 ## Getting Started
 
 ### Dependencies
-<br />
+
 
 * Node js
 * React
