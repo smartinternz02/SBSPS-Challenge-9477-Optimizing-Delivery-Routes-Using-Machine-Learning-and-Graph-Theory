@@ -7,6 +7,7 @@ import '../App.css'
 import AddMarkers from '../components/addMarkers';
 import Routing from '../components/Routing';
 import { useNavigate } from 'react-router-dom'
+import image from '../assets/Images/bg.jpg'
 
 let markerArray = [];
 
@@ -50,7 +51,7 @@ function Form() {
 
     return (
         <div className='mainContainer'>
-            <div className='mapContainer'>
+            <div className='mapContainer glow-on-hover-2'>
                 <MapContainer center={position} zoom={12}>
                     <TileLayer
                         url="https://api.maptiler.com/maps/basic-v2/{z}/{x}/{y}.png?key=7rFCjcdeALOXb1a4DICF"
@@ -58,16 +59,18 @@ function Form() {
                     <AddMarkers />
                 </MapContainer>
             </div>
+            <div className='logo'></div>
             <div className='formContainer'>
                 <div className='form'>
                     <form onSubmit={HandleClick}>
                         <input id='addressInput' type="text" required placeholder="Enter a location" name='address' />
-                        <button type="submit" className='formButton' onClick={refreshPage}>Submit</button>
+                        <button type="submit" className='glow-on-hover' onClick={refreshPage}>Submit</button>
                         {/* <h1>{Address}</h1> */}
                     </form>
                 </div>
-                <button type="submit" onClick={route} style={{ marginTop: "-2px"}}>Display Route</button>
+                <button type="submit" className='glow-on-hover' onClick={route} style={{ marginTop: "-2px" }}>Display Route</button>
             </div>
+            <div className='footer'>Made with 💖 by <a href='https://github.com/VishnuVardhanJS' target="_blank" rel="noopener noreferrer">Vishnu</a> & <a href='https://github.com/GrimWatch' target="_blank" rel="noopener noreferrer">Rishab</a></div>
         </ div>
     )
 }
