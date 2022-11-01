@@ -1,6 +1,8 @@
 # Chariot
 
-Route optimizing ML Model
+## Route optimizing ML Model
+
+[![Route Optimization](https://yt-embed.herokuapp.com/embed?v=YnAtqDUC0GY)](https://www.youtube.com/watch?v=YnAtqDUC0GY "Route Optimization")
 
 ## Description
 
@@ -9,7 +11,8 @@ Basically it is an web app for finding the optimized route from the given locati
 
 ## Getting Started
 
-### Dependencies
+### Dependencies<br />
+
 
 * Node js
 * React
