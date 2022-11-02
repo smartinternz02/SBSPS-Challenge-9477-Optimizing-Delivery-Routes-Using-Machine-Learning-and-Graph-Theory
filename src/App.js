@@ -16,7 +16,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" exact element={<Form />} />
-        <Route path="/route"  element={<Routing />}/>
+        <Route path="/route" element={<Routing />}/>
       </Routes>
     </Router>
   );

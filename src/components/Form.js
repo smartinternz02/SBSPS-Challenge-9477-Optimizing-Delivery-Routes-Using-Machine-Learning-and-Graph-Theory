@@ -49,6 +49,10 @@ function Form() {
 
     };
 
+    function submitClick() {
+        window.open('/route', );
+      }
+
     return (
         <div className='mainContainer'>
             <div className='mapContainer glow-on-hover-2'>
@@ -68,7 +72,7 @@ function Form() {
                         {/* <h1>{Address}</h1> */}
                     </form>
                 </div>
-                <button type="submit" className='glow-on-hover' onClick={route} style={{ marginTop: "-2px" }}>Display Route</button>
+                <button type="submit" className='glow-on-hover' onClick={submitClick} style={{ marginTop: "-2px" }}>Display Route</button>
             </div>
             <div className='footer'>Made with 💖 by <a href='https://github.com/VishnuVardhanJS' target="_blank" rel="noopener noreferrer">Vishnu</a> & <a href='https://github.com/GrimWatch' target="_blank" rel="noopener noreferrer">Rishab</a></div>
         </ div>
