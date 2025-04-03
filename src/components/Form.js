@@ -74,7 +74,7 @@ function Form() {
                 </div>
                 <button type="submit" className='glow-on-hover' onClick={submitClick} style={{ marginTop: "-2px" }}>Display Route</button>
             </div>
-            <div className='footer'>Made with 💖 by <a href='https://github.com/VishnuVardhanJS' target="_blank" rel="noopener noreferrer">Vishnu</a> & <a href='https://github.com/GrimWatch' target="_blank" rel="noopener noreferrer">Rishab</a></div>
+            {/* <div className='footer'>Made with 💖 by <a href='https://github.com/VishnuVardhanJS' target="_blank" rel="noopener noreferrer">Vishnu</a> & <a href='https://github.com/GrimWatch' target="_blank" rel="noopener noreferrer">Rishab</a></div> */}
         </ div>
     )
 }

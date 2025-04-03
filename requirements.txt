@@ -1,7 +1,8 @@
-cplex==22.1.0.0
+cplex
 docplex==2.23.222
 Flask==2.2.2
 Flask_Cors==3.0.10
 folium==0.13.0
 numpy==1.23.0
 requests==2.28.0
+Werkzeug==2.2.2
