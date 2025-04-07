@@ -62,7 +62,7 @@ def flask_route():
 
 
 def displayDirection():
-    response = req.get('https://route-optimization-backend.onrender.com/geocode')
+    response = req.get('http://127.0.0.1:5000/geocode')
 
     rnd = np.random
     rnd.seed(0)

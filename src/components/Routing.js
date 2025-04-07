@@ -6,7 +6,7 @@ function Routing() {
 
   useEffect(() => {
     async function createMarkup() {
-      let response = await fetch(`https://route-optimization-backend.onrender.com/route`);
+      let response = await fetch(`http://localhost:5000/route`);
        const backendHtmlString = await response.text()
        console.log(backendHtmlString)
         return {__html: backendHtmlString};
